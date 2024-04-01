@@ -1,53 +1,72 @@
 <?php
-
 class brazilHolidays extends worldHolidays {
+	
+  public array $carnaval;
+  public array $paixao;
+  public array $tiradentes;
+  public array $corpusChristi;
+  public array $finados;
+  public array $proclamacaoDaRepublica;
   
   function __construct(string $year) {
     parent::__construct($year);
+    $this->carnaval = $this->carnaval();
+    $this->paixao = $this->paixao();
+    $this->tiradentes = $this->tiradentes();
+    $this->corpusChristi = $this->corpusChristi();
+    $this->finados = $this->finados();
+    $this->proclamacaoDaRepublica = $this->proclamacaoDaRepublica();
     $this->buildBrazilHolidays();
   }
 
+  
   function buildBrazilHolidays() {
-  	$dates[$this->carnaval()] = $this->buildHoliday($this->carnaval());
-  	$dates[$this->paixao()] = $this->buildHoliday($this->paixao());
-  	$dates[$this->tiraDentes()] = $this->buildHoliday($this->tiraDentes());
-  	$dates[$this->corpusChristi()] = $this->buildHoliday($this->corpusChristi());
-  	$dates[$this->finados()] = $this->buildHoliday($this->finados());
-  	$dates[$this->proclamacaoDaRepublica()] = $this->buildHoliday($this->proclamacaoDaRepublica());
+  	$dates[$this->carnaval["date"]] = $this->carnaval;
+  	$dates[$this->paixao["date"]] = $this->paixao;
+  	$dates[$this->tiradentes["date"]] = $this->tiradentes;
+  	$dates[$this->corpusChristi["date"]] = $this->corpusChristi;
+  	$dates[$this->finados["date"]] = $this->finados;
+  	$dates[$this->proclamacaoDaRepublica["date"]] = $this->proclamacaoDaRepublica;
   	$this->holidays["main"] = array_merge($this->holidays["main"], $dates);
   	ksort($this->holidays["main"]);
   }
 
   function carnaval() {
-    $carnaval = date_sub(
-      date_create($this->easter()), date_interval_create_from_date_string('47 days')
+    $date = date_sub(
+      date_create($this->easter["date"]), date_interval_create_from_date_string('47 days')
     );
-    return date_format($carnaval, 'Y-m-d');
+    return $this->buildHoliday(date_format($date, 'Y-m-d'), "carnaval");
   }
 
   function paixao() {
-    $friday = date_sub(
-      date_create($this->easter()), date_interval_create_from_date_string('2 days')
+    $date = date_sub(
+      date_create($this->easter["date"]), date_interval_create_from_date_string('2 days')
     );
-    return date_format($friday, 'Y-m-d');
+    return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta da paixao");
   }
 
-  function tiraDentes() {
-    return $this->year."-04-21";
+  function tiradentes() {
+    return $this->buildHoliday($this->year."-04-21", "tiradentes");
   }
 
   function corpusChristi() {
-    $corpusChristi = date_add(
-      date_create($this->easter()), date_interval_create_from_date_string('60 days')
+    $date = date_add(
+      date_create($this->easter["date"]), date_interval_create_from_date_string('60 days')
     );
-    return date_format($corpusChristi, 'Y-m-d');
+    return $this->buildHoliday(date_format($date, 'Y-m-d'), "corpus christi");
   }
 
   function finados() {
-    return $this->year."-11-02";
+    return $this->buildHoliday($this->year."-11-02", "finados");
   }
 
   function proclamacaoDaRepublica() {
-    return $this->year."-11-15";
+    return $this->buildHoliday($this->year."-11-15", "proclamação da república");
+  }
+}
+
+
+  function proclamacaoDaRepublica() {
+    return $this->buildHoliday($this->year."-11-15", "proclamação da república");
   }
 }
