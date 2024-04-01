@@ -11,7 +11,8 @@ class worldHolidays {
   public array $christmas;
   public array $holidays = [];
   
-  function __construct(string $year) {
+  function __construct(string $year = null) {
+    $year = !is_null($year) ?: date("Y");
     $this->year = $year;
     $this->coverage = "World";
     $this->universalFraternization = $this->universalFraternization();
