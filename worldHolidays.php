@@ -23,6 +23,13 @@ class worldHolidays {
     return $weekDays[$index];
   }
 
+  function printHoliday($date) {
+    return = [
+      "date" = $date;
+      "weekDay" = $this->weekDay($date);
+    ];
+  }
+
   function buildWorldHolidays() {
     $this->holidays["main"][] = $this->universalFraternization();
     $this->holidays["main"][] = $this->easter();
