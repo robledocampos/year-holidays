@@ -3,6 +3,7 @@
 class worldHolidays {
 
   public const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  public string $coverage;
   public string $year;
   public array $universalFraternization;
   public array $easter;
@@ -12,6 +13,7 @@ class worldHolidays {
   
   function __construct(string $year) {
     $this->year = $year;
+    $this->coverage = "World";
     $this->universalFraternization = $this->universalFraternization();
     $this->easter = $this->easter();
     $this->laborDay = $this->laborDay();
@@ -48,7 +50,8 @@ class worldHolidays {
     return [
       "date" => $date,
       "name" => $holidayName,
-      "weekday" => $this->weekDay($date)
+      "weekday" => $this->weekDay($date),
+      "coverage" => $this->coverage
     ];
   }
   
