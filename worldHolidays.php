@@ -11,7 +11,7 @@ class worldHolidays {
   }
 
   function stringToDate(string $stringDate) {
-    return date("Y-d-m", strtotime($stringDate));
+    return date("Y-m-d", strtotime($stringDate));
   }
 
   function buildWorldHolidays() {
