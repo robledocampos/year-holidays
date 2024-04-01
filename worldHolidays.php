@@ -9,7 +9,7 @@ class worldHolidaysModel extends baseHolidaysModel {
   
   function __construct(string $year = null) {
     $year = !is_null($year) ?: date("Y");
-    parent::__construct($year, "World");
+    $this->coverage = "World";
     $this->buildWorldHolidays();
   }
   
