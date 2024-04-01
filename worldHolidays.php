@@ -1,35 +1,44 @@
 <?php
 
 class worldHolidays {
+
   public string $year;
   public array $holidays = [];
   
   function __construct(string $year) {
     $this->year = $year;
-    $this->listWorldHolidays();
+    $this->buildWorldHolidays();
   }
 
-	function listWorldHolidays() {
-		$this->holidays["main"][] = $this->universalFraternization();
-		$this->holidays["main"][] = $this->easter();
-		$this->holidays["main"][] = $this->universalFraternization();
-		$this->holidays["main"][] = $this->laborDay();
-		$this->holidays["main"][] = $this->christmas();
-	}
+  function stringToDate(string $stringDate) {
+    return date("Y-d-m", strtotime($stringDate));
+  }
+
+  function buildWorldHolidays() {
+    $this->holidays["main"][] = $this->universalFraternization();
+    $this->holidays["main"][] = $this->easter();
+    $this->holidays["main"][] = $this->universalFraternization();
+    $this->holidays["main"][] = $this->laborDay();
+    $this->holidays["main"][] = $this->christmas();
+  }
 
   function universalFraternization() {
-  	return $this->year."-01-01";
+    $date = $this->year."-01-01";
+    return $this->stringToDate($date);
   }
 
   function easter() {
-	  return date("Y-m-d", easter_date($this->year));
+    $date = date("Y-m-d", easter_date($this->year));
+    return $this->stringToDate($date);  
   }
   
   function laborDay() {
-  	return $this->year."-05-01";
+    $date = $this->year."-05-01"
+    return $this->stringToDate($date);  
   }
 
   function christmas() {
-  	return $this->year."-12-25";
+    $date = $this->year."-12-25";
+    return $this->stringToDate($date);  
   }
 }
