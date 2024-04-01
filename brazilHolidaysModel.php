@@ -1,5 +1,5 @@
 <?php
-class brazilHolidays extends worldHolidays {
+class brazilHolidaysModel extends worldHolidaysModel {
 	
   public array $carnaval;
   public array $paixao;
