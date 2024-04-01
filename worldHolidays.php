@@ -10,6 +10,15 @@ class worldHolidays {
   function universalFraternization() {
   	return $this->year."-01-01";
   }
+
+  function easter() {
+	  return date(
+		  "Y-m-d", 
+		  easter_date(
+			  $this->year()
+		  )
+	  );
+  }
   
   function laborDay() {
   	return $this->year."-05-01";
