@@ -5,8 +5,11 @@ class brazilHolidays extends worldHolidays {
   public array $paixao;
   public array $tiradentes;
   public array $corpusChristi;
+  public array $independencia;
+  public array $aparecida;
   public array $finados;
   public array $proclamacaoDaRepublica;
+  public array $conscienciaNegra;
   
   function __construct(string $year) {
     parent::__construct($year);
@@ -15,20 +18,26 @@ class brazilHolidays extends worldHolidays {
     $this->paixao = $this->paixao();
     $this->tiradentes = $this->tiradentes();
     $this->corpusChristi = $this->corpusChristi();
+    $this->independencia = $this->independencia();
+    $this->aparecida = $this->aparecida();
     $this->finados = $this->finados();
     $this->proclamacaoDaRepublica = $this->proclamacaoDaRepublica();
+    $this->conscienciaNegra = $this->conscienciaNegra();
     $this->buildBrazilHolidays();
   }
 
   function buildBrazilHolidays() {
-  	$dates[$this->carnaval["date"]] = $this->carnaval;
-  	$dates[$this->paixao["date"]] = $this->paixao;
-  	$dates[$this->tiradentes["date"]] = $this->tiradentes;
-  	$dates[$this->corpusChristi["date"]] = $this->corpusChristi;
-  	$dates[$this->finados["date"]] = $this->finados;
-  	$dates[$this->proclamacaoDaRepublica["date"]] = $this->proclamacaoDaRepublica;
-  	$this->holidays["main"] = array_merge($this->holidays["main"], $dates);
-  	ksort($this->holidays["main"]);
+    $dates[$this->carnaval["date"]] = $this->carnaval;
+    $dates[$this->paixao["date"]] = $this->paixao;
+    $dates[$this->tiradentes["date"]] = $this->tiradentes;
+    $dates[$this->corpusChristi["date"]] = $this->corpusChristi;
+    $dates[$this->independencia["date"]] = $this->independencia;
+    $dates[$this->aparecida["date"]] = $this->aparecida;
+    $dates[$this->finados["date"]] = $this->finados;
+    $dates[$this->proclamacaoDaRepublica["date"]] = $this->proclamacaoDaRepublica;
+    $dates[$this->conscienciaNegra["date"]] = $this->conscienciaNegra;
+    $this->holidays["main"] = array_merge($this->holidays["main"], $dates);
+    ksort($this->holidays["main"]);
   }
 
   function carnaval() {
@@ -56,6 +65,14 @@ class brazilHolidays extends worldHolidays {
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "corpus christi");
   }
 
+  function independencia() {
+    return $this->buildHoliday($this->year."-09-07", "independência");
+  }
+
+  function aparecida() {
+    return $this->buildHoliday($this->year."-10-12", "nossa senhora aparecida");
+  }
+	
   function finados() {
     return $this->buildHoliday($this->year."-11-02", "finados");
   }
@@ -63,9 +80,8 @@ class brazilHolidays extends worldHolidays {
   function proclamacaoDaRepublica() {
     return $this->buildHoliday($this->year."-11-15", "proclamação da república");
   }
- }
 
-  function proclamacaoDaRepublica() {
-    return $this->buildHoliday($this->year."-11-15", "proclamação da república");
+  function conscienciaNegra() {
+    return $this->buildHoliday($this->year."-11-20", "dia da consciência negra");
   }
 }
