@@ -2,6 +2,7 @@
 
 class worldHolidays {
 
+  public const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   public string $year;
   public array $holidays = [];
   
@@ -11,30 +12,24 @@ class worldHolidays {
   }
   
   function weekDay(string $date) {
-    $weekDays = [];
-    $weekDays[0] = "sunday";
-    $weekDays[1] = "monday";
-    $weekDays[2] = "tuesday";
-    $weekDays[3] = "wednesday";
-    $weekDays[4] = "thursday";
-    $weekDays[5] = "friday";
-    $weekDays[6] = "saturday";
     $index = date("w", strtotime($date));
-    return $weekDays[$index];
+    return $this::WEEKDAYS[$index];
   }
 
-  function printHoliday(string $date) {
+  function buildHoliday(string $date) {
     return [
       "date" => $date,
-      "weekDay" => $this->weekDay($date)
+      "weekday" => $this->weekDay($date)
     ];
   }
 
   function buildWorldHolidays() {
-    $this->holidays["main"][] = $this->universalFraternization();
-    $this->holidays["main"][] = $this->easter();
-    $this->holidays["main"][] = $this->laborDay();
-    $this->holidays["main"][] = $this->christmas();
+    $dates[$this->universalFraternization()] = $this->buildHoliday($this->universalFraternization());
+    $dates[$this->easter()] = $this->buildHoliday($this->easter());
+    $dates[$this->laborDay()] = $this->buildHoliday($this->laborDay());
+    $dates[$this->christmas()] = $this->buildHoliday($this->christmas());
+    $this->holidays['main'] = $dates;
+    ksort( $this->holidays['main']);
   }
 
   function universalFraternization() {
