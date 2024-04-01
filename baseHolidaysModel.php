@@ -8,10 +8,9 @@ class baseHolidaysModel {
   public string $year;
   public array $holidays = [];
   
-  function __construct(string $year = null, string $coverage) {
+  function __construct(string $year = null) {
     $year = !is_null($year) ?: date("Y");
     $this->year = $year;
-    $this->coverage = $coverage;
   }
   
   function buildHoliday(string $date, string $holidayName) array {
