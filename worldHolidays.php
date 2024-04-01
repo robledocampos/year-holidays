@@ -9,11 +9,7 @@ class worldHolidays {
     $this->year = $year;
     $this->buildWorldHolidays();
   }
-
-  function stringToDate(string $date) {
-    return date("Y-m-d", strtotime($stringDate));
-  }
-
+  
   function weekDay(string $date) {
     $weekDays = [];
     $weekDays[0] = "sunday";
