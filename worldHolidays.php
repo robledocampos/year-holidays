@@ -33,7 +33,7 @@ class worldHolidays {
   }
   
   function laborDay() {
-    $date = $this->year."-05-01"
+    $date = $this->year."-05-01";
     return $this->stringToDate($date);  
   }
 
