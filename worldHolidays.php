@@ -10,6 +10,23 @@ class worldHolidays {
     $this->buildWorldHolidays();
   }
 
+  function stringToDate(string $date) {
+    return date("Y-m-d", strtotime($stringDate));
+  }
+
+  function weekDay(string $date) {
+    array $weekDays = [];
+    $weekDays[0] = "sunday";
+    $weekDays[1] = "monday";
+    $weekDays[2] = "tuesday";
+    $weekDays[3] = "wednesday";
+    $weekDays[4] = "thursday";
+    $weekDays[5] = "friday";
+    $weekDays[6] = "saturday";
+    $index = date("w", strtotime($date));
+    return $weekDays[$index];
+  }
+
   function buildWorldHolidays() {
     $this->holidays["main"][] = $this->universalFraternization();
     $this->holidays["main"][] = $this->easter();
@@ -18,7 +35,8 @@ class worldHolidays {
   }
 
   function universalFraternization() {
-    return $this->year."-01-01";
+    $date = $this->year."-01-01";
+    return $this->stringToDate($date);
   }
 
   function easter() {
@@ -26,10 +44,12 @@ class worldHolidays {
   }
   
   function laborDay() {
-    return $this->year."-05-01";
+    $date = $this->year."-05-01";
+    return $this->stringToDate($date);  
   }
 
   function christmas() {
-    return $this->year."-12-25";
+    $date = $this->year."-12-25";
+    return $this->stringToDate($date);  
   }
 }
