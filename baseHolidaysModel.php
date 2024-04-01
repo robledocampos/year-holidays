@@ -13,7 +13,7 @@ class baseHolidaysModel {
     $this->year = $year;
   }
   
-  function buildHoliday(string $date, string $holidayName) array {
+  function buildHoliday(string $date, string $holidayName) : array {
     return [
       "date" => $date,
       "name" => $holidayName,
@@ -22,7 +22,7 @@ class baseHolidaysModel {
     ];
   }
   
-  function weekDay(string $date) string {
+  function weekDay(string $date) : string {
     $index = date("w", strtotime($date));
     return $this::WEEKDAYS[$index];
   }
