@@ -10,28 +10,22 @@ class brazilHolidays extends worldHolidays {
   function listBrazilHolidays() {
     $this->holidays["main"][] = $this->carnaval();
     $this->holidays["main"][] = $this->paixao();
-	$this->holidays["main"][] = $this->tiraDentes();
-	$this->holidays["main"][] = $this->corpusChristi();
-	$this->holidays["main"][] = $this->finados();
-	$this->holidays["main"][] = $this->proclamacaoDaRepublica();
+	  $this->holidays["main"][] = $this->tiraDentes();
+	  $this->holidays["main"][] = $this->corpusChristi();
+	  $this->holidays["main"][] = $this->finados();
+	  $this->holidays["main"][] = $this->proclamacaoDaRepublica();
   }
 
   function carnaval() {
-	$carnaval = date_sub(
-	  date_create(
-		$this->easter()
-		), 
-	  	date_interval_create_from_date_string('47 days')
+	  $carnaval = date_sub(
+	    date_create($this->easter()), date_interval_create_from_date_string('47 days')
 	  );
 	  return date_format($carnaval, 'Y-m-d');
   }
 
   function paixao() {
 	  $friday = date_sub(
-	  	date_create(
-		  $this->easter()
-	  	), 
-	  	date_interval_create_from_date_string('2 days')
+      date_create($this->easter()), date_interval_create_from_date_string('2 days')
 	  );
 	  return date_format($friday, 'Y-m-d');
   }
@@ -42,10 +36,7 @@ class brazilHolidays extends worldHolidays {
 
   function corpusChristi() {
 	$corpusChristi = date_add(
-		date_create(
-		  $this->easter()
-	  	), 
-	  	date_interval_create_from_date_string('60 days')
+		date_create($this->easter()), date_interval_create_from_date_string('60 days')
   	);
   	return date_format($corpusChristi, 'Y-m-d');
   }
