@@ -6,15 +6,15 @@ class worldHolidays {
   
   function __construct(string $year) {
     $this->year = $year;
-		$this->listWorldHolidays();
+    $this->listWorldHolidays();
   }
 
 	function listWorldHolidays() {
-		$this->holidays["main"][] = this->universalFraternization();
-		$this->holidays["main"][] = this->easter();
-		$this->holidays["main"][] = this->universalFraternization();
-		$this->holidays["main"][] = this->laborDay();
-		$this->holidays["main"][] = this->christmas();
+		$this->holidays["main"][] = $this->universalFraternization();
+		$this->holidays["main"][] = $this->easter();
+		$this->holidays["main"][] = $this->universalFraternization();
+		$this->holidays["main"][] = $this->laborDay();
+		$this->holidays["main"][] = $this->christmas();
 	}
 
   function universalFraternization() {
