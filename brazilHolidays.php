@@ -10,6 +10,7 @@ class brazilHolidays extends worldHolidays {
   
   function __construct(string $year) {
     parent::__construct($year);
+    $this->coverage = "Brazil";
     $this->carnaval = $this->carnaval();
     $this->paixao = $this->paixao();
     $this->tiradentes = $this->tiradentes();
@@ -19,7 +20,6 @@ class brazilHolidays extends worldHolidays {
     $this->buildBrazilHolidays();
   }
 
-  
   function buildBrazilHolidays() {
   	$dates[$this->carnaval["date"]] = $this->carnaval;
   	$dates[$this->paixao["date"]] = $this->paixao;
@@ -42,7 +42,7 @@ class brazilHolidays extends worldHolidays {
     $date = date_sub(
       date_create($this->easter["date"]), date_interval_create_from_date_string('2 days')
     );
-    return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta da paixao");
+    return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixao");
   }
 
   function tiradentes() {
@@ -63,8 +63,7 @@ class brazilHolidays extends worldHolidays {
   function proclamacaoDaRepublica() {
     return $this->buildHoliday($this->year."-11-15", "proclamação da república");
   }
-}
-
+ }
 
   function proclamacaoDaRepublica() {
     return $this->buildHoliday($this->year."-11-15", "proclamação da república");
