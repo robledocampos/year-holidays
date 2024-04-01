@@ -17,7 +17,6 @@ class worldHolidays {
   function buildWorldHolidays() {
     $this->holidays["main"][] = $this->universalFraternization();
     $this->holidays["main"][] = $this->easter();
-    $this->holidays["main"][] = $this->universalFraternization();
     $this->holidays["main"][] = $this->laborDay();
     $this->holidays["main"][] = $this->christmas();
   }
