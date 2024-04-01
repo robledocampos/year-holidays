@@ -15,7 +15,7 @@ class worldHolidays {
   }
 
   function weekDay(string $date) {
-    array $weekDays = [];
+    $weekDays = [];
     $weekDays[0] = "sunday";
     $weekDays[1] = "monday";
     $weekDays[2] = "tuesday";
