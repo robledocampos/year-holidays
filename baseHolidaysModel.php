@@ -1,4 +1,5 @@
 <?php
+
 class baseHolidaysModel {
 
   public const WEEKDAYS = [
