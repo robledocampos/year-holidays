@@ -1,8 +1,8 @@
 <?php
 
 class worldHolidays {
-  protected string $year;
-  protected array $holidays = [];
+  public string $year;
+  public array $holidays = [];
   
   function __construct(string $year) {
     $this->year = $year;
@@ -15,6 +15,7 @@ class worldHolidays {
 		$this->holidays["main"][] = $this->universalFraternization();
 		$this->holidays["main"][] = $this->laborDay();
 		$this->holidays["main"][] = $this->christmas();
+		sort($this->holidays["main"]);
 	}
 
   function universalFraternization() {
