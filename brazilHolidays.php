@@ -51,7 +51,7 @@ class brazilHolidays extends worldHolidays {
     $date = date_sub(
       date_create($this->easter["date"]), date_interval_create_from_date_string('2 days')
     );
-    return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixao");
+    return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixão");
   }
 
   function tiradentes() {
