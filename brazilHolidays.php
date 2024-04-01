@@ -8,12 +8,14 @@ class brazilHolidays extends worldHolidays {
   }
 
   function buildBrazilHolidays() {
-    $this->holidays["main"][] = $this->carnaval();
-    $this->holidays["main"][] = $this->paixao();
-    $this->holidays["main"][] = $this->tiraDentes();
-    $this->holidays["main"][] = $this->corpusChristi();
-    $this->holidays["main"][] = $this->finados();
-    $this->holidays["main"][] = $this->proclamacaoDaRepublica();
+  	$dates[$this->carnaval()] = $this->buildHoliday($this->carnaval());
+  	$dates[$this->paixao()] = $this->buildHoliday($this->paixao());
+  	$dates[$this->tiraDentes()] = $this->buildHoliday($this->tiraDentes());
+  	$dates[$this->corpusChristi()] = $this->buildHoliday($this->corpusChristi());
+  	$dates[$this->finados()] = $this->buildHoliday($this->finados());
+  	$dates[$this->proclamacaoDaRepublica()] = $this->buildHoliday($this->proclamacaoDaRepublica());
+  	$this->holidays["main"] = array_merge($this->holidays["main"], $dates);
+  	ksort($this->holidays["main"]);
   }
 
   function carnaval() {
