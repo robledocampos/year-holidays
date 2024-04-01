@@ -13,19 +13,19 @@ class worldHolidaysModel extends baseHolidaysModel {
     $this->buildWorldHolidays();
   }
   
-  function universalFraternization() {
+  function universalFraternization() : string {
     return $this->buildHoliday($this->year."-01-01", "universal fraternization");
   }
   
-  function easter() {
+  function easter() : string {
     return $this->buildHoliday(date("Y-m-d", easter_date($this->year)), "easter");
   }
   
-  function laborDay() {
+  function laborDay() : string {
     return $this->buildHoliday($this->year."-05-01", "labor day");
   }
 
-  function christmas() {
+  function christmas() : string {
     return $this->buildHoliday($this->year."-12-25", "christmas");
   }
 
