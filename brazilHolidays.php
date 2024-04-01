@@ -11,7 +11,7 @@ class brazilHolidays extends worldHolidays {
   public array $proclamacaoDaRepublica;
   public array $conscienciaNegra;
   
-  function __construct(string $year) {
+  function __construct(string $year = null) {
     parent::__construct($year);
     $this->coverage = "Brazil";
     $this->carnaval = $this->carnaval();
