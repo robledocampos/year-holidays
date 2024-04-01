@@ -31,8 +31,7 @@ class worldHolidays {
   }
 
   function universalFraternization() {
-    $date = $this->year."-01-01";
-    return $this->stringToDate($date);
+    return $this->year."-01-01";
   }
 
   function easter() {
@@ -40,12 +39,10 @@ class worldHolidays {
   }
   
   function laborDay() {
-    $date = $this->year."-05-01";
-    return $this->stringToDate($date);  
+    return $this->year."-05-01";
   }
 
   function christmas() {
-    $date = $this->year."-12-25";
-    return $this->stringToDate($date);  
+    return $this->year."-12-25";
   }
 }
