@@ -31,8 +31,7 @@ class brazilHolidays extends worldHolidays {
   }
 
   function tiraDentes() {
-    $date = $this->year."-04-21";
-    return $this->stringToDate($date);
+    return $this->year."-04-21";
   }
 
   function corpusChristi() {
@@ -43,12 +42,10 @@ class brazilHolidays extends worldHolidays {
   }
 
   function finados() {
-    $date = $this->year."-11-02";
-    return $this->stringToDate($date);
+    return $this->year."-11-02";
   }
 
   function proclamacaoDaRepublica() {
-    $date = $this->year."-11-15";
-    return $this->stringToDate($date);
+    return $this->year."-11-15";
   }
 }
