@@ -22,12 +22,7 @@ class worldHolidays {
   }
 
   function easter() {
-	  return date(
-		  "Y-m-d", 
-		  easter_date(
-			  $this->year()
-		  )
-	  );
+	  return date("Y-m-d", easter_date($this->year));
   }
   
   function laborDay() {
