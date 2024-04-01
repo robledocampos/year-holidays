@@ -23,10 +23,10 @@ class worldHolidays {
     return $weekDays[$index];
   }
 
-  function printHoliday($date) {
-    return = [
-      "date" = $date;
-      "weekDay" = $this->weekDay($date);
+  function printHoliday(string $date) {
+    return [
+      "date" => $date,
+      "weekDay" => $this->weekDay($date)
     ];
   }
 
