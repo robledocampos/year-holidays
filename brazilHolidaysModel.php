@@ -28,61 +28,61 @@ class brazilHolidaysModel extends worldHolidaysModel {
   }
 
   function buildBrazilHolidays() {
-    $dates[$this->carnaval["date"]] = $this->carnaval;
-    $dates[$this->paixao["date"]] = $this->paixao;
-    $dates[$this->tiradentes["date"]] = $this->tiradentes;
-    $dates[$this->corpusChristi["date"]] = $this->corpusChristi;
-    $dates[$this->independencia["date"]] = $this->independencia;
-    $dates[$this->aparecida["date"]] = $this->aparecida;
-    $dates[$this->finados["date"]] = $this->finados;
-    $dates[$this->proclamacaoDaRepublica["date"]] = $this->proclamacaoDaRepublica;
-    $dates[$this->conscienciaNegra["date"]] = $this->conscienciaNegra;
-    $this->holidays["main"] = array_merge($this->holidays["main"], $dates);
+    $mainDates[$this->carnaval["date"]] = $this->carnaval;
+    $mainDates[$this->paixao["date"]] = $this->paixao;
+    $mainDates[$this->tiradentes["date"]] = $this->tiradentes;
+    $mainDates[$this->corpusChristi["date"]] = $this->corpusChristi;
+    $mainDates[$this->independencia["date"]] = $this->independencia;
+    $mainDates[$this->aparecida["date"]] = $this->aparecida;
+    $mainDates[$this->finados["date"]] = $this->finados;
+    $mainDates[$this->proclamacaoDaRepublica["date"]] = $this->proclamacaoDaRepublica;
+    $mainDates[$this->conscienciaNegra["date"]] = $this->conscienciaNegra;
+    $this->holidays["main"] = array_merge($this->holidays["main"], $mainDates);
     ksort($this->holidays["main"]);
   }
 
-  function carnaval() : string {
+  function carnaval() : array {
     $date = date_sub(
       date_create($this->easter["date"]), date_interval_create_from_date_string('47 days')
     );
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "carnaval");
   }
 
-  function paixao() : string {
+  function paixao() : array {
     $date = date_sub(
       date_create($this->easter["date"]), date_interval_create_from_date_string('2 days')
     );
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixão");
   }
 
-  function tiradentes() : string {
+  function tiradentes() : array {
     return $this->buildHoliday($this->year."-04-21", "tiradentes");
   }
 
-  function corpusChristi() : string {
+  function corpusChristi() : array {
     $date = date_add(
       date_create($this->easter["date"]), date_interval_create_from_date_string('60 days')
     );
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "corpus christi");
   }
 
-  function independencia() : string {
+  function independencia() : array {
     return $this->buildHoliday($this->year."-09-07", "independência");
   }
 
-  function aparecida() : string {
+  function aparecida() : array {
     return $this->buildHoliday($this->year."-10-12", "nossa senhora aparecida");
   }
 	
-  function finados() : string {
+  function finados() : array {
     return $this->buildHoliday($this->year."-11-02", "finados");
   }
 
-  function proclamacaoDaRepublica() : string {
+  function proclamacaoDaRepublica() : array {
     return $this->buildHoliday($this->year."-11-15", "proclamação da república");
   }
 
-  function conscienciaNegra() : string {
+  function conscienciaNegra() : array {
     return $this->buildHoliday($this->year."-11-20", "dia da consciência negra");
   }
 }
