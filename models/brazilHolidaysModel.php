@@ -14,7 +14,7 @@ class brazilHolidaysModel extends worldHolidaysModel {
   
   function __construct(string $year = null) {
     parent::__construct($year);
-    $this->coverage = "Brazil";
+    $this->coverage = "brazil";
     $this->carnaval = $this->carnaval();
     $this->paixao = $this->paixao();
     $this->tiradentes = $this->tiradentes();

@@ -32,5 +32,4 @@ class baseHolidaysModel {
     $index = date("w", strtotime($date));
     return $this::WEEKDAYS[$index];
   }
-  
 }
