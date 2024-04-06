@@ -1,5 +1,7 @@
 <?php
 
+use JetBrains\PhpStorm\ArrayShape;
+
 class brazilHolidaysModel extends worldHolidaysModel {
 	
   public array $carnaval;
@@ -41,6 +43,7 @@ class brazilHolidaysModel extends worldHolidaysModel {
     ksort($this->holidays["main"]);
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function carnaval() : array {
     $date = date_sub(
       date_create($this->easter["date"]), date_interval_create_from_date_string('47 days')
@@ -48,6 +51,7 @@ class brazilHolidaysModel extends worldHolidaysModel {
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "carnaval");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function paixao() : array {
     $date = date_sub(
       date_create($this->easter["date"]), date_interval_create_from_date_string('2 days')
@@ -55,10 +59,12 @@ class brazilHolidaysModel extends worldHolidaysModel {
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixão");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function tiradentes() : array {
     return $this->buildHoliday($this->year."-04-21", "tiradentes");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function corpusChristi() : array {
     $date = date_add(
       date_create($this->easter["date"]), date_interval_create_from_date_string('60 days')
@@ -66,22 +72,27 @@ class brazilHolidaysModel extends worldHolidaysModel {
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "corpus christi");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function independencia() : array {
     return $this->buildHoliday($this->year."-09-07", "independência");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function aparecida() : array {
     return $this->buildHoliday($this->year."-10-12", "nossa senhora aparecida");
   }
-	
+
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function finados() : array {
     return $this->buildHoliday($this->year."-11-02", "finados");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function proclamacaoDaRepublica() : array {
     return $this->buildHoliday($this->year."-11-15", "proclamação da república");
   }
 
+  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function conscienciaNegra() : array {
     return $this->buildHoliday($this->year."-11-20", "dia da consciência negra");
   }
