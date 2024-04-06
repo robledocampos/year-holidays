@@ -1,6 +1,6 @@
 {
   "name": "robledocampos/year-holidays",
-  "description": "Get the holidays by year",
+  "description": "Get the holidays of a region by year",
   "require": {
     "php": ">=8.0"
   }

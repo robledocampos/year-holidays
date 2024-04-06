@@ -1,5 +1,5 @@
 # Year Holidays
-Get the holidays by year
+Get the holidays of a region by year
 
 ## Available Holidays Classes
 
