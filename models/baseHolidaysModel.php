@@ -1,7 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\ArrayShape;
-
 class baseHolidaysModel {
 
   public const WEEKDAYS = [
@@ -21,7 +19,6 @@ class baseHolidaysModel {
     $this->year = ($year == null) ? date("Y") : $year;
   }
   
-  #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function buildHoliday(string $date, string $holidayName) : array {
     return [
       "date" => $date,
