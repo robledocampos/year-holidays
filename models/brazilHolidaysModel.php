@@ -94,6 +94,6 @@ class brazilHolidaysModel extends worldHolidaysModel {
 
   #[ArrayShape(["date" => "string", "name" => "string", "weekday" => "string", "coverage" => "string"])]
   function conscienciaNegra() : array {
-    return $this->buildHoliday($this->year."-11-20", "dia da consciência negra");
+    return $this->buildHoliday($this->year."-11-20", "consciência negra");
   }
 }

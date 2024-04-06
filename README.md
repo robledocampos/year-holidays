@@ -39,7 +39,7 @@ With this method you could get the holidays.
         },
         "2024-03-29":{
             "date":"2024-03-29",
-            "name":"sexta-feira da paix\u00e3o",
+            "name":"sexta-feira da paixão",
             "weekday":"friday",
             "coverage":"brazil"
         },
@@ -69,7 +69,7 @@ With this method you could get the holidays.
         },
         "2024-09-07":{
             "date":"2024-09-07",
-            "name":"independ\u00eancia",
+            "name":"independência",
             "weekday":"saturday",
             "coverage":"brazil"
         },
@@ -87,13 +87,13 @@ With this method you could get the holidays.
         },
         "2024-11-15":{
             "date":"2024-11-15",
-            "name":"proclama\u00e7\u00e3o da rep\u00fablica",
+            "name":"proclamação da república",
             "weekday":"friday",
             "coverage":"brazil"
         },
         "2024-11-20":{
             "date":"2024-11-20",
-            "name":"dia da consci\u00eancia negra",
+            "name":"consciência negra",
             "weekday":"wednesday",
             "coverage":"brazil"
         },
