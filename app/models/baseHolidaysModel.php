@@ -6,7 +6,7 @@ class baseHolidaysModel {
   public string $coverage;
   public array $holidays;
   public string $year;
-  
+
   function __construct(string $year = null) {
     $this->year = $year ?? date("Y");
   }
@@ -21,7 +21,7 @@ class baseHolidaysModel {
       ]
     ];
   }
-  
+
   function weekDay(string $date) : string {
     $index = date("w", strtotime($date));
     return $this::WEEKDAYS[$index];

@@ -1,6 +1,6 @@
 <?php
 
-class saoPauloCityHolidaysModel extends saoPauloStateHolidaysModel {
+class saoPauloCityHolidays extends saoPauloStateHolidaysModel {
 	
   const COVERAGE = "são paulo";
   
