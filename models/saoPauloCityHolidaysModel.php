@@ -12,7 +12,6 @@ class saoPauloCityHolidaysModel extends saoPauloStateHolidaysModel {
 
   function buildHolidays() : void {
     $this->holidays["main"][] = $this->cityBirthday();
-    ksort($this->holidays["main"]);
   }
 
   function cityBirthday() : array {

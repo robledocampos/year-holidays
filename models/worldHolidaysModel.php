@@ -33,6 +33,5 @@ class worldHolidaysModel extends baseHolidaysModel {
     $this->holidays['main'][] = $this->easter();
     $this->holidays['main'][] = $this->laborDay();
     $this->holidays['main'][] = $this->christmas();
-    ksort($this->holidays['main']);
   }
 }

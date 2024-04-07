@@ -12,7 +12,6 @@ class saoPauloStateHolidaysModel extends brazilHolidaysModel {
 
   function buildHolidays() : void {
     $this->holidays["main"][] = $this->revolucaoConstitucionalista();
-    ksort($this->holidays["main"]);
   }
 
   function revolucaoConstitucionalista() : array {

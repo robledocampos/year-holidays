@@ -20,7 +20,6 @@ class brazilHolidaysModel extends worldHolidaysModel {
     $this->holidays["main"][] = $this->finados();
     $this->holidays["main"][] = $this->proclamacaoDaRepublica();
     $this->holidays["main"][] = $this->conscienciaNegra();
-    ksort($this->holidays["main"]);
   }
 
   function carnaval() : array {

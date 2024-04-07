@@ -28,6 +28,7 @@ class baseHolidaysModel {
   }
 
   function printHolidays() : string {
+    ksort($this->holidays["main"]);
     return json_encode($this->holidays);
   }
 }
