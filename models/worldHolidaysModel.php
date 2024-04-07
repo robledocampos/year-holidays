@@ -2,7 +2,8 @@
 
 class worldHolidaysModel extends baseHolidaysModel {
 
-  const COVERAGE = "wolrd";
+  const COVERAGE = "world";
+  public string $easter;
   
   function __construct(string $year = null) {
     parent::__construct($year);
@@ -15,7 +16,8 @@ class worldHolidaysModel extends baseHolidaysModel {
   }
   
   function easter() : array {
-    return $this->buildHoliday(date("Y-m-d", easter_date($this->year)), "easter");
+    $this->easter = date("Y-m-d", easter_date($this->year));
+    return $this->buildHoliday($this->easter, "easter");
   }
   
   function laborDay() : array {

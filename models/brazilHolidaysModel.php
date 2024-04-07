@@ -25,14 +25,14 @@ class brazilHolidaysModel extends worldHolidaysModel {
 
   function carnaval() : array {
     $date = date_sub(
-      date_create($this->easter["date"]), date_interval_create_from_date_string('47 days')
+      date_create($this->easter), date_interval_create_from_date_string('47 days')
     );
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "carnaval");
   }
 
   function paixao() : array {
     $date = date_sub(
-      date_create($this->easter["date"]), date_interval_create_from_date_string('2 days')
+      date_create($this->easter), date_interval_create_from_date_string('2 days')
     );
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixão");
   }
@@ -43,7 +43,7 @@ class brazilHolidaysModel extends worldHolidaysModel {
 
   function corpusChristi() : array {
     $date = date_add(
-      date_create($this->easter["date"]), date_interval_create_from_date_string('60 days')
+      date_create($this->easter), date_interval_create_from_date_string('60 days')
     );
     return $this->buildHoliday(date_format($date, 'Y-m-d'), "corpus christi");
   }
