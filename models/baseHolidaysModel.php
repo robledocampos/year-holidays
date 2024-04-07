@@ -2,29 +2,23 @@
 
 class baseHolidaysModel {
 
-  public const WEEKDAYS = [
-    "sunday", 
-    "monday", 
-    "tuesday", 
-    "wednesday", 
-    "thursday", 
-    "friday", 
-    "saturday"
-  ];
+  public const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   public string $coverage;
+  public array $holidays;
   public string $year;
-  public array $holidays = [];
   
   function __construct(string $year = null) {
-    $this->year = ($year == null) ? date("Y") : $year;
+    $this->year = $year ?? date("Y");
   }
-  
+
   function buildHoliday(string $date, string $holidayName) : array {
     return [
-      "date" => $date,
-      "name" => $holidayName,
-      "weekday" => $this->weekDay($date),
-      "coverage" => $this->coverage
+      $date => [
+        "date" => $date,
+        "name" => $holidayName,
+        "weekday" => $this->weekDay($date),
+        "coverage" => $this->coverage
+      ]
     ];
   }
   

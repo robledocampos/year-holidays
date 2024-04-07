@@ -1,43 +1,25 @@
 <?php
 
 class brazilHolidaysModel extends worldHolidaysModel {
-	
-  public array $carnaval;
-  public array $paixao;
-  public array $tiradentes;
-  public array $corpusChristi;
-  public array $independencia;
-  public array $aparecida;
-  public array $finados;
-  public array $proclamacaoDaRepublica;
-  public array $conscienciaNegra;
+
+  const COVERAGE = "brazil";
   
   function __construct(string $year = null) {
     parent::__construct($year);
-    $this->coverage = "brazil";
-    $this->carnaval = $this->carnaval();
-    $this->paixao = $this->paixao();
-    $this->tiradentes = $this->tiradentes();
-    $this->corpusChristi = $this->corpusChristi();
-    $this->independencia = $this->independencia();
-    $this->aparecida = $this->aparecida();
-    $this->finados = $this->finados();
-    $this->proclamacaoDaRepublica = $this->proclamacaoDaRepublica();
-    $this->conscienciaNegra = $this->conscienciaNegra();
-    $this->buildBrazilHolidays();
+    $this->coverage = self::COVERAGE;
+    self::buildHolidays();
   }
 
-  function buildBrazilHolidays() {
-    $mainDates[$this->carnaval["date"]] = $this->carnaval;
-    $mainDates[$this->paixao["date"]] = $this->paixao;
-    $mainDates[$this->tiradentes["date"]] = $this->tiradentes;
-    $mainDates[$this->corpusChristi["date"]] = $this->corpusChristi;
-    $mainDates[$this->independencia["date"]] = $this->independencia;
-    $mainDates[$this->aparecida["date"]] = $this->aparecida;
-    $mainDates[$this->finados["date"]] = $this->finados;
-    $mainDates[$this->proclamacaoDaRepublica["date"]] = $this->proclamacaoDaRepublica;
-    $mainDates[$this->conscienciaNegra["date"]] = $this->conscienciaNegra;
-    $this->holidays["main"] = array_merge($this->holidays["main"], $mainDates);
+  function buildHolidays() : void {
+    $this->holidays["main"][] = $this->carnaval();
+    $this->holidays["main"][] = $this->paixao();
+    $this->holidays["main"][] = $this->tiradentes();
+    $this->holidays["main"][] = $this->corpusChristi();
+    $this->holidays["main"][] = $this->independencia();
+    $this->holidays["main"][] = $this->aparecida();
+    $this->holidays["main"][] = $this->finados();
+    $this->holidays["main"][] = $this->proclamacaoDaRepublica();
+    $this->holidays["main"][] = $this->conscienciaNegra();
     ksort($this->holidays["main"]);
   }
 
