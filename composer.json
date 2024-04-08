@@ -1,5 +1,6 @@
 {
   "name": "robledocampos/year-holidays",
+  "version": "1.0.0-dev",
   "description": "Get the holidays of a region, with respective weekday, by year.",
   "license": "MIT",
   "require": {
