@@ -15,6 +15,7 @@ class brazilHolidaysModel extends worldHolidaysModel {
     $this->holidays["main"][] = $this->paixao();
     $this->holidays["main"][] = $this->tiradentes();
     $this->holidays["main"][] = $this->corpusChristi();
+    $this->holidays["main"][] = $this->laborDay();
     $this->holidays["main"][] = $this->independencia();
     $this->holidays["main"][] = $this->aparecida();
     $this->holidays["main"][] = $this->finados();
@@ -46,6 +47,13 @@ class brazilHolidaysModel extends worldHolidaysModel {
     return $this->buildHoliday(
       $this->year."-04-21",
       "tiradentes"
+    );
+  }
+
+  function laborDay() : array {
+    return $this->buildHoliday(
+        $this->year."-05-01",
+        "dia do trabalho"
     );
   }
 

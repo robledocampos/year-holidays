@@ -25,13 +25,6 @@ class worldHolidaysModel extends baseHolidaysModel {
       "easter"
     );
   }
-  
-  function laborDay() : array {
-    return $this->buildHoliday(
-      $this->year."-05-01",
-      "labor day"
-    );
-  }
 
   function christmas() : array {
     return $this->buildHoliday(
@@ -43,7 +36,6 @@ class worldHolidaysModel extends baseHolidaysModel {
   function buildHolidays() : void {
     $this->holidays['main'][] = $this->universalFraternization();
     $this->holidays['main'][] = $this->easter();
-    $this->holidays['main'][] = $this->laborDay();
     $this->holidays['main'][] = $this->christmas();
   }
 }
