@@ -4,6 +4,7 @@
   "description": "Get the holidays of a region, with respective weekday, by year.",
   "license": "MIT",
   "require": {
-    "php": ">=8.0"
+    "php": ">=8.0",
+    "ext-calendar": "*"
   }
 }

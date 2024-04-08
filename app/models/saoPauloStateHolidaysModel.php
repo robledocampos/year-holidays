@@ -15,6 +15,9 @@ class saoPauloStateHolidaysModel extends brazilHolidaysModel {
   }
 
   function revolucaoConstitucionalista() : array {
-    return $this->buildHoliday($this->year."-07-09", "revolucao constitucionalista");
+    return $this->buildHoliday(
+     $this->year."-07-09",
+     "revolucao constitucionalista"
+    );
   }
 }

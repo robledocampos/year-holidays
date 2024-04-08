@@ -5,6 +5,8 @@ Get the holidays of a region, with respective weekday, by year.
 
 - World
 - Brazil
+- São Paulo State
+- São Paulo City
 
 ## Importing the Package
 
@@ -106,4 +108,3 @@ With this method you could get the holidays.
     }
 }
 ```
-

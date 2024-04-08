@@ -26,44 +26,71 @@ class brazilHolidaysModel extends worldHolidaysModel {
     $date = date_sub(
       date_create($this->easter), date_interval_create_from_date_string('47 days')
     );
-    return $this->buildHoliday(date_format($date, 'Y-m-d'), "carnaval");
+    return $this->buildHoliday(
+      date_format($date, 'Y-m-d'),
+      "carnaval"
+    );
   }
 
   function paixao() : array {
     $date = date_sub(
       date_create($this->easter), date_interval_create_from_date_string('2 days')
     );
-    return $this->buildHoliday(date_format($date, 'Y-m-d'), "sexta-feira da paixão");
+    return $this->buildHoliday(
+      date_format($date, 'Y-m-d'),
+      "sexta-feira da paixão"
+    );
   }
 
   function tiradentes() : array {
-    return $this->buildHoliday($this->year."-04-21", "tiradentes");
+    return $this->buildHoliday(
+      $this->year."-04-21",
+      "tiradentes"
+    );
   }
 
   function corpusChristi() : array {
     $date = date_add(
       date_create($this->easter), date_interval_create_from_date_string('60 days')
     );
-    return $this->buildHoliday(date_format($date, 'Y-m-d'), "corpus christi");
+    return $this->buildHoliday(
+      date_format($date, 'Y-m-d'),
+      "corpus christi"
+    );
   }
 
   function independencia() : array {
-    return $this->buildHoliday($this->year."-09-07", "independência");
+    return $this->buildHoliday(
+      $this->year."-09-07",
+      "independência"
+    );
   }
 
   function aparecida() : array {
-    return $this->buildHoliday($this->year."-10-12", "nossa senhora aparecida");
+    return $this->buildHoliday(
+      $this->year."-10-12",
+      "nossa senhora aparecida"
+    );
   }
 
   function finados() : array {
-    return $this->buildHoliday($this->year."-11-02", "finados");
+    return $this->buildHoliday(
+     $this->year."-11-02",
+     "finados"
+    );
   }
 
   function proclamacaoDaRepublica() : array {
-    return $this->buildHoliday($this->year."-11-15", "proclamação da república");
+    return $this->buildHoliday(
+     $this->year."-11-15",
+     "proclamação da república"
+    );
   }
 
   function conscienciaNegra() : array {
-    return $this->buildHoliday($this->year."-11-20", "consciência negra");
+    return $this->buildHoliday(
+     $this->year."-11-20",
+     "consciência negra"
+    );
   }
 }

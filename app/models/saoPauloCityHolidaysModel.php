@@ -15,6 +15,9 @@ class saoPauloCityHolidaysModel extends saoPauloStateHolidaysModel {
   }
 
   function cityBirthday() : array {
-    return $this->buildHoliday($this->year."-01-25", "city birthday");
+    return $this->buildHoliday(
+      $this->year."-01-25",
+      "city birthday"
+    );
   }
 }
