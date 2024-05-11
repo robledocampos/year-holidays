@@ -14,7 +14,7 @@ class saoPauloStateHolidaysModel extends brazilHolidaysModel {
     $this->holidays["main"][] = $this->revolucaoConstitucionalista();
   }
 
-  function revolucaoConstitucionalista() : array {
+  function consticionalistRevolution() : array {
     return $this->buildHoliday(
      $this->year."-07-09",
      "revolucao constitucionalista"
