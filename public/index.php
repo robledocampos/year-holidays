@@ -1,3 +1,3 @@
 <?php
 
-echo "public index\n";
+phpinfo();
