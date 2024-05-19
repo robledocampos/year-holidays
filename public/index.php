@@ -5,6 +5,7 @@ use Phalcon\Autoload\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Url;
+use Phalcon\Http\Request;
 
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');

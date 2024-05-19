@@ -2,7 +2,7 @@
 
 use Phalcon\Mvc\Controller;
 
-class holidaysController extends Controller
+class HolidaysController extends Controller
 {
     public function searchAction()
     {
