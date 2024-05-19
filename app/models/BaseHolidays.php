@@ -1,6 +1,8 @@
 <?php
 
-class baseHolidaysModel {
+use Phalcon\Mvc\Model;
+
+class BaseHolidays extends Model{
 
   public const WEEKDAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   public string $coverage;

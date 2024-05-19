@@ -1,6 +1,6 @@
 <?php
 
-class brazilHolidaysModel extends worldHolidaysModel {
+class BrazilHolidays extends WorldHolidays {
 
   const COVERAGE = "brazil";
   

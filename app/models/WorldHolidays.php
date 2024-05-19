@@ -1,6 +1,6 @@
 <?php
 
-class worldHolidaysModel extends baseHolidaysModel {
+class WorldHolidays extends BaseHolidays {
 
   const COVERAGE = "world";
   public string $easter;
